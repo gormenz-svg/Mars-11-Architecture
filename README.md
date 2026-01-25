@@ -52,7 +52,7 @@ The architecture is powered by the **Tesla Swarm Integrity Protocol (TSIP)**, wh
 
 ## 📂 Repository Structure
 * `/core` - Mathematical models of the 11-Property Algorithm.
-* `/m11_visual_docking.py` - Python scripts for orbital propellant transfer logic.
+* `simulations/m11_visual_docking.py` - Python scripts for orbital propellant transfer logic.
 * `/protocols` - TSIP documentation and P2P communication specs.
 * `/robotics` - Logic for Optimus-led autonomous construction.
 
