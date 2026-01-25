@@ -46,6 +46,9 @@ The architecture is powered by the **Tesla Swarm Integrity Protocol (TSIP)**, wh
 * **AAB (Adaptive Autonomy Balance):** Dynamic decision-making without Earth's command.
 * **Rs Index (Resonance Stability):** Mathematical consensus for swarm coordination.
 
+<img width="1722" height="974" alt="02" src="https://github.com/user-attachments/assets/4f19e8f1-da91-4e6b-b48f-7ac1f8ac4bf6" />
+
+
 ---
 
 ## 📂 Repository Structure
