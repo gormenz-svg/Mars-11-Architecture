@@ -30,6 +30,15 @@ The core objective is to transition from human-dependent operations to **Autonom
 
 ---
 
+## 🎯 Core Problem Solved: The Propellant Deadlock
+Current docking protocols (Dragon, Soyuz) are designed for low-frequency, human-supervised operations with dry cargo. **M-11** addresses the specific challenges of Mars Colonization:
+
+* **Dynamic Mass Balancing:** Real-time compensation for propellant sloshing in 1000t-class tankers.
+* **Latency-Independent Decision Making:** Elimination of the 24-minute Earth-Mars feedback loop via **TSIP**.
+* **Entropy Filtering:** Using **GIEP** to maintain precision docking even during high solar radiation (sensor noise).
+
+---
+
 ## 🛠 Technical Stack: TSIP Protocol
 The architecture is powered by the **Tesla Swarm Integrity Protocol (TSIP)**, which solves the "Latency Deadlock" (24-minute delay).
 
