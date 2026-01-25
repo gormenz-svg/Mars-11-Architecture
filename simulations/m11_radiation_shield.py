@@ -1,58 +1,79 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-class M11ElectrostaticShield:
-    def __init__(self, voltage=5e6): # 5 Million Volts potential
+class M11UltimateElectrostatic:
+    def __init__(self, voltage=1e8): # 100 Megavolts (NASA conceptual level)
         self.voltage = voltage
-        self.k = 8.987e9 # Coulomb constant
-        self.proton_charge = 1.6e-19
-        self.proton_mass = 1.67e-27
+        self.k = 8.987e9
+        self.q_p = 1.602e-19  # Proton charge (C)
+        self.m_p = 1.672e-27  # Proton mass (kg)
+        self.c = 3e8          # Speed of light
+        
+        # Calculate Hull Charge Q based on V = kQ/R (Assuming hull radius R=4.5m)
+        self.R_hull = 4.5
+        self.Q_hull = (self.voltage * self.R_hull) / self.k
 
-    def simulate_deflection(self, n_particles=40):
-        plt.figure(figsize=(10, 6))
+    def run_simulation(self, n_particles=50):
+        plt.figure(figsize=(12, 7))
         
-        # Visualize the ship hull as a charged line
-        plt.axvline(x=0, color='gold', lw=5, label='Charged Hull (Positive)')
+        # Drawing the Starship Hull (The "Charged Node")
+        hull_x = 0
+        plt.axvline(x=hull_x, color='gold', lw=8, label='Starship Charged Hull (100MV)', alpha=0.7)
         
-        deflected = 0
+        # High-speed solar protons (10% of speed of light)
+        v0 = 0.1 * self.c 
+        dt = 1e-9 # Nanosecond steps for high-speed physics
+        
+        deflected_count = 0
+        
         for _ in range(n_particles):
-            # Initial position (far away) and high velocity
-            pos = np.array([-5.0, np.random.uniform(-3, 3)])
-            vel = np.array([20.0, 0.0]) # 20 m/s for visual representation
+            # Initial position: 20m away, random y-offset
+            pos = np.array([-20.0, np.random.uniform(-10, 10)])
+            vel = np.array([v0, 0.0])
             
             path = []
             hit = False
             
-            for _ in range(200):
+            for _ in range(1000):
                 path.append(pos.copy())
-                r = np.linalg.norm(pos)
-                if r < 0.1: # Collision check
+                
+                # Vector distance to hull
+                r_vec = pos - np.array([hull_x, pos[1]]) # Simplification to x-axis repulsion
+                r_mag = abs(r_vec[0])
+                
+                if r_mag < 0.1: # Collision check
                     hit = True
                     break
                 
                 # Coulomb Force: F = k * (q1 * q2) / r^2
-                # Simplified 1D-repulsion for visualization
-                dist_to_hull = abs(pos[0])
-                if dist_to_hull < 2.0:
-                    force_mag = self.k * (self.proton_charge * 0.01) / (dist_to_hull**2 + 0.1)
-                    accel = -force_mag / self.proton_mass # Negative x direction
-                    vel[0] += accel * 0.001
+                force_x = (self.k * self.Q_hull * self.q_p) / (r_mag**2)
                 
-                pos += vel * 0.01
-                if pos[0] < -10 or pos[0] > 5: break
+                # Acceleration: a = F / m
+                accel_x = -force_x / self.m_p # Repelling from hull
+                
+                # Update velocity and position
+                vel[0] += accel_x * dt
+                pos += vel * dt
+                
+                # Stop if particle is far away
+                if pos[0] < -30 or pos[0] > 10: break
 
             path = np.array(path)
+            # Determine success: if particle reversed direction
             if not hit and vel[0] < 0:
-                deflected += 1
+                deflected_count += 1
                 plt.plot(path[:,0], path[:,1], 'g-', alpha=0.4)
             else:
                 plt.plot(path[:,0], path[:,1], 'r-', alpha=0.2)
 
-        plt.title(f"m-11 breakthrough: electrostatic proton deflection\nEfficiency: {(deflected/n_particles)*100}%")
-        plt.legend()
+        efficiency = (deflected_count / n_particles) * 100
+        plt.title(f"m-11 phase III: relativistic proton deflection\nVoltage: {self.voltage/1e6:.0f}MV | Efficiency: {efficiency:.1f}%")
+        plt.xlabel("distance to hull (meters)")
+        plt.ylabel("deflection spread")
         plt.grid(True, alpha=0.1)
         plt.show()
 
 if __name__ == "__main__":
-    shield = M11ElectrostaticShield()
-    shield.simulate_deflection()
+    # Property 9 (Hardening): Testing 100MV shield against 0.1c protons
+    sim = M11UltimateElectrostatic()
+    sim.run_simulation()
