@@ -1,79 +1,53 @@
 import numpy as np
-import matplotlib.pyplot as plt
+import time
 
-class M11UltimateElectrostatic:
-    def __init__(self, voltage=1e8): # 100 Megavolts (NASA conceptual level)
-        self.voltage = voltage
-        self.k = 8.987e9
-        self.q_p = 1.602e-19  # Proton charge (C)
-        self.m_p = 1.672e-27  # Proton mass (kg)
-        self.c = 3e8          # Speed of light
-        
-        # Calculate Hull Charge Q based on V = kQ/R (Assuming hull radius R=4.5m)
-        self.R_hull = 4.5
-        self.Q_hull = (self.voltage * self.R_hull) / self.k
+class M11PredictiveShield:
+    """
+    Property 7 (Balance) & Property 8 (Practical Freedom).
+    Predictive pulse activation to minimize energy consumption.
+    """
+    def __init__(self):
+        self.energy_bank = 100.0 # Standard energy units
+        self.is_active = False
 
-    def run_simulation(self, n_particles=50):
-        plt.figure(figsize=(12, 7))
-        
-        # Drawing the Starship Hull (The "Charged Node")
-        hull_x = 0
-        plt.axvline(x=hull_x, color='gold', lw=8, label='Starship Charged Hull (100MV)', alpha=0.7)
-        
-        # High-speed solar protons (10% of speed of light)
-        v0 = 0.1 * self.c 
-        dt = 1e-9 # Nanosecond steps for high-speed physics
-        
-        deflected_count = 0
-        
-        for _ in range(n_particles):
-            # Initial position: 20m away, random y-offset
-            pos = np.array([-20.0, np.random.uniform(-10, 10)])
-            vel = np.array([v0, 0.0])
+    def spectral_analysis(self, solar_flux):
+        """
+        Property 4: Comprehension.
+        Analyze light to predict incoming particle density.
+        """
+        # If flux jump detected, prepare for impact
+        return True if solar_flux > 85 else False
+
+    def activate_pulsed_shield(self, particle_cluster):
+        """
+        Property 11: Realization.
+        Activate electrostatic repulsion ONLY when particles are in proximity.
+        """
+        if self.is_active:
+            # High-intensity burst to deflect the cluster
+            cost = len(particle_cluster) * 0.05
+            self.energy_bank -= cost
+            return f"PULSE: Deflected {len(particle_cluster)} particles. Energy left: {self.energy_bank:.2f}"
+        return "IDLE: Monitoring..."
+
+    def run_cycle(self):
+        print("--- m-11 predictive shield: core online ---")
+        for second in range(1, 11):
+            # Simulate real-time solar monitoring
+            flux = np.random.uniform(50, 100)
+            threat = self.spectral_analysis(flux)
             
-            path = []
-            hit = False
-            
-            for _ in range(1000):
-                path.append(pos.copy())
-                
-                # Vector distance to hull
-                r_vec = pos - np.array([hull_x, pos[1]]) # Simplification to x-axis repulsion
-                r_mag = abs(r_vec[0])
-                
-                if r_mag < 0.1: # Collision check
-                    hit = True
-                    break
-                
-                # Coulomb Force: F = k * (q1 * q2) / r^2
-                force_x = (self.k * self.Q_hull * self.q_p) / (r_mag**2)
-                
-                # Acceleration: a = F / m
-                accel_x = -force_x / self.m_p # Repelling from hull
-                
-                # Update velocity and position
-                vel[0] += accel_x * dt
-                pos += vel * dt
-                
-                # Stop if particle is far away
-                if pos[0] < -30 or pos[0] > 10: break
-
-            path = np.array(path)
-            # Determine success: if particle reversed direction
-            if not hit and vel[0] < 0:
-                deflected_count += 1
-                plt.plot(path[:,0], path[:,1], 'g-', alpha=0.4)
+            if threat:
+                self.is_active = True
+                # Simulate a cluster of protons arriving
+                cluster = np.random.rand(20) 
+                print(f"Sec {second:02} | {self.activate_pulsed_shield(cluster)}")
             else:
-                plt.plot(path[:,0], path[:,1], 'r-', alpha=0.2)
-
-        efficiency = (deflected_count / n_particles) * 100
-        plt.title(f"m-11 phase III: relativistic proton deflection\nVoltage: {self.voltage/1e6:.0f}MV | Efficiency: {efficiency:.1f}%")
-        plt.xlabel("distance to hull (meters)")
-        plt.ylabel("deflection spread")
-        plt.grid(True, alpha=0.1)
-        plt.show()
+                self.is_active = False
+                print(f"Sec {second:02} | Status: Standby")
+            
+            time.sleep(0.3)
 
 if __name__ == "__main__":
-    # Property 9 (Hardening): Testing 100MV shield against 0.1c protons
-    sim = M11UltimateElectrostatic()
-    sim.run_simulation()
+    shield = M11PredictiveShield()
+    shield.run_cycle()
