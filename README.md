@@ -7,26 +7,26 @@ The core objective is to transition from human-dependent operations to **Autonom
 
 ---
 
-## 🏗 The 11-Stage Skeleton (Core Nodes)
+## 🏗 The 11-stage skeleton (technical nodes)
 
-### Phase I: Earth Cradle (Pre-Launch)
-1. **[WILL]** - Economic Scalability & Starship Mass Production.
-2. **[WISDOM]** - Environmental Calibration & Global Risk Assessment.
-3. **[KNOWLEDGE]** - High-Res Resource Mapping (Water Ice & Lava Tubes).
+### Phase i: infrastructure foundation (pre-launch)
+1. **Strategic impulse** – scaling production throughput, cost-reduction models, and launch cadence optimization.
+2. **System optimization** – environmental risk modeling and iterative design calibration based on flight data.
+3. **Data acquisition** – high-fidelity mapping of martian volatiles, water ice deposits, and lava tube structural integrity.
 
-### Phase II: Orbital Bridge (Logistics)
-4. **[COMPREHENSION]** - P2P Autonomous Docking (The "Resonance" Factor).
-5. **[PROJECTIVE FREEDOM]** - Simulation of Propellant Transfer in Zero-G.
-6. **[PROJECTIVE LIMITATION]** - Standardization of Universal Docking Interfaces.
+### Phase ii: orbital logistics & coupling
+4. **State synchronization** – p2p autonomous docking and relative state estimation via the resonance stability index.
+5. **Virtual prototyping** – high-fidelity simulations of zero-g fluid dynamics and cryogenic propellant transfer.
+6. **Interface standardization** – implementation of unified hardware/software docking constraints and universal port protocols.
 
-### Phase III: Deep Space Transit (The Journey)
-7. **[BALANCE]** - Radiation Mitigation & Resource Equilibrium ($A \approx 0.6$).
-8. **[PRACTICAL FREEDOM]** - Autonomous Navigation via Stellar Triangulation.
-9. **[PRACTICAL LIMITATION]** - System Hardening against Solar Events.
+### Phase iii: autonomous deep space transit
+7. **Dynamic equilibrium** – active management of life-support systems and radiation shielding (target stability $a \approx 0.6$).
+8. **Decentralized navigation** – stellar-based positioning and trajectory correction without reliance on earth-link telemetry.
+9. **Hardening & resilience** – system-wide protection against single event upsets (seu) and solar flux degradation.
 
-### Phase IV: Mars Realization (Landing & Settlement)
-10. **[ANCHOR]** - Deployment of First-Wave Optimus-Subjets.
-11. **[REALIZATION]** - Autonomous ISRU (In-Situ Resource Utilization) & Habitat Growth.
+### Phase iv: surface deployment & scaling
+10. **Operational baseline** – deployment of autonomous robotic precursors for site preparation and landing zone stabilization.
+11. **System closure** – achieving fully autonomous isru (in-situ resource utilization) cycles and closed-loop habitat growth.
 
 ---
 
