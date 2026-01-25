@@ -1,53 +1,76 @@
 import numpy as np
-import time
+import matplotlib.pyplot as plt
 
-class M11PredictiveShield:
-    """
-    Property 7 (Balance) & Property 8 (Practical Freedom).
-    Predictive pulse activation to minimize energy consumption.
-    """
+class M11SmartShield:
     def __init__(self):
-        self.energy_bank = 100.0 # Standard energy units
-        self.is_active = False
+        self.energy_bank = 100.0  # Percentage
+        self.solar_input = 0.5    # Constant recharge from panels
+        self.history = {'energy': [], 'flux': [], 'threats': [], 'time': []}
+        self.prev_flux = 50.0
 
-    def spectral_analysis(self, solar_flux):
+    def analyze_threat(self, current_flux):
         """
-        Property 4: Comprehension.
-        Analyze light to predict incoming particle density.
+        Property 4 (Comprehension): Delta-based prediction.
+        Detects spikes before they reach critical levels.
         """
-        # If flux jump detected, prepare for impact
-        return True if solar_flux > 85 else False
+        delta = current_flux - self.prev_flux
+        self.prev_flux = current_flux
+        
+        # Threat if flux is high OR if it's rising too fast (Predictive Logic)
+        is_threat = (current_flux > 80) or (delta > 15)
+        return is_threat, delta
 
-    def activate_pulsed_shield(self, particle_cluster):
-        """
-        Property 11: Realization.
-        Activate electrostatic repulsion ONLY when particles are in proximity.
-        """
-        if self.is_active:
-            # High-intensity burst to deflect the cluster
-            cost = len(particle_cluster) * 0.05
-            self.energy_bank -= cost
-            return f"PULSE: Deflected {len(particle_cluster)} particles. Energy left: {self.energy_bank:.2f}"
-        return "IDLE: Monitoring..."
-
-    def run_cycle(self):
-        print("--- m-11 predictive shield: core online ---")
-        for second in range(1, 11):
-            # Simulate real-time solar monitoring
-            flux = np.random.uniform(50, 100)
-            threat = self.spectral_analysis(flux)
+    def run_simulation(self, duration=60):
+        print("--- m-11 phase III: smart pulse shield active ---")
+        
+        for t in range(duration):
+            # Simulate fluctuating solar environment
+            flux = 50 + np.random.normal(0, 5)
+            if t in range(20, 30): flux += (t - 15) * 5  # Simulated Solar Flare spike
             
-            if threat:
-                self.is_active = True
-                # Simulate a cluster of protons arriving
-                cluster = np.random.rand(20) 
-                print(f"Sec {second:02} | {self.activate_pulsed_shield(cluster)}")
-            else:
-                self.is_active = False
-                print(f"Sec {second:02} | Status: Standby")
+            is_threat, delta = self.analyze_threat(flux)
             
-            time.sleep(0.3)
+            # Energy Logic (Property 7: Balance)
+            cost = 0
+            if is_threat:
+                # Pulse cost scales with flux intensity
+                cost = (flux / 20) 
+                self.energy_bank -= cost
+            
+            # Property 11: Realization (Constant recharge)
+            self.energy_bank = min(100.0, self.energy_bank + self.solar_input)
+            
+            # Record telemetry
+            self.history['energy'].append(self.energy_bank)
+            self.history['flux'].append(flux)
+            self.history['threats'].append(100 if is_threat else 0)
+            self.history['time'].append(t)
+
+        self.plot_telemetry()
+
+    def plot_telemetry(self):
+        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8), sharex=True)
+        
+        # Plot 1: Solar Flux & Prediction Threshold
+        ax1.plot(self.history['time'], self.history['flux'], color='orange', label='Solar Flux (p/cm²)')
+        ax1.fill_between(self.history['time'], self.history['threats'], color='red', alpha=0.2, label='Shield Active (Pulse)')
+        ax1.set_ylabel('Radiation Intensity')
+        ax1.set_title('M-11 Predictive Response: Flux vs Shield Activation')
+        ax1.legend()
+        ax1.grid(True, alpha=0.2)
+
+        # Plot 2: Energy Bank Management
+        ax2.plot(self.history['time'], self.history['energy'], color='cyan', lw=2, label='Battery Level (%)')
+        ax2.axhline(y=20, color='red', linestyle='--', alpha=0.5, label='Critical Reserve')
+        ax2.set_ylabel('Energy Bank (%)')
+        ax2.set_xlabel('Mission Time (seconds)')
+        ax2.set_title('Property 7 & 8: Energy Balance & Resilience')
+        ax2.legend()
+        ax2.grid(True, alpha=0.2)
+
+        plt.tight_layout()
+        plt.show()
 
 if __name__ == "__main__":
-    shield = M11PredictiveShield()
-    shield.run_cycle()
+    m11 = M11SmartShield()
+    m11.run_simulation()
