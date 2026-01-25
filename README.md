@@ -41,6 +41,14 @@ Current docking protocols (Dragon, Soyuz) are designed for low-frequency, human-
 
 ---
 
+## 🎯 Radiation Defense Architecture: The BNNT-Electrostatic Hybrid
+
+To ensure crew safety during the 200-day transit, M-11 utilizes a cutting-edge hybrid approach:
+- **BNNT Composite Matrix:** We replace bulk shielding with Boron Nitride Nanotube (BNNT) reinforced polymers. Boron’s high neutron absorption cross-section effectively mitigates secondary radiation showers.
+- **Cognitive Pulse Activation:** Using real-time flux analysis, the system triggers high-voltage electrostatic repulsion only when threat clusters are detected, preserving energy and material integrity.
+
+---
+
 ## 🛠 Technical Stack: TSIP Protocol
 The architecture is powered by the **Tesla Swarm Integrity Protocol (TSIP)**, which solves the "Latency Deadlock" (24-minute delay).
 
