@@ -58,9 +58,33 @@ The architecture is powered by the **Tesla Swarm Integrity Protocol (TSIP)**, wh
 
 ---
 
+## 🌌 Project MARS-11: Core Simulations
+
+The `simulations/` directory contains the algorithmic backbone of the mission, following the **Algorithm 11** properties for autonomy and resilience.
+
+### 🛰️ Phase I-II: Orbital & Transit Operations
+* **`m11_visual_docking.py`**
+    * *Purpose:* High-precision orbital propellant transfer and docking logic.
+    * *Key Tech:* Computer vision synchronization and Property 7 (Balance) for fuel stabilization.
+* **`m11_radiation_shield.py`**
+    * *Purpose:* Predictive pulsed electrostatic shielding for Starship.
+    * *Key Tech:* BNNT-reinforced composite modeling and solar flux delta-analysis (Property 4).
+
+### 🏗️ Phase III-IV: Surface Deployment & Swarm Intelligence
+* **`m11_optimus_site_scan.py`**
+    * *Purpose:* Initial landing zone topography analysis and hazard detection.
+    * *Key Tech:* LIDAR data processing and Property 10 (Opora) for structural stability.
+* **`m11_optimus_agentic_swarm.py`**
+    * *Purpose:* Autonomous multi-agent coordination for base construction.
+    * *Key Tech:* **AAB (Autonomous Adaptive Balance)**. Real-time role redistribution (Energy/Build/Repair) and decentralized leadership logic.
+
+### ⛏️ Upcoming Modules
+* `m11_prospector_logic.py`: Subsurface ice detection and resource prioritization.
+* `m11_life_support_gen.py`: Oxygen/Methane production cycle management.
+
+
 ## 📂 Repository Structure
 * `/core` - Mathematical models of the 11-Property Algorithm.
-* `simulations/m11_visual_docking.py` - Python scripts for orbital propellant transfer logic.
 * `/protocols` - TSIP documentation and P2P communication specs.
 * `/robotics` - Logic for Optimus-led autonomous construction.
 
