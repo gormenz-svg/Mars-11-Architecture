@@ -84,6 +84,7 @@ The `simulations/` directory contains the algorithmic backbone of the mission, f
 
 
 ## 📂 Repository Structure
+* `/simulations`
 * `/core` - Mathematical models of the 11-Property Algorithm.
 * `/protocols` - TSIP documentation and P2P communication specs.
 * `/robotics` - Logic for Optimus-led autonomous construction.
