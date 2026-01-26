@@ -49,12 +49,15 @@ To ensure crew safety during the 200-day transit, M-11 utilizes a cutting-edge h
 
 ---
 
-## 🛠 Technical Stack: TSIP Protocol
-The architecture is powered by the **Tesla Swarm Integrity Protocol (TSIP)**, which solves the "Latency Deadlock" (24-minute delay).
+## 🛠 Technical Stack: TSIP Protocol (Swarm Intelligence Framework)
 
-* **GIEP (Gravity/Inertia Entropy Purification):** Real-time sensor noise filtering for landing.
-* **AAB (Adaptive Autonomy Balance):** Dynamic decision-making without Earth's command.
-* **Rs Index (Resonance Stability):** Mathematical consensus for swarm coordination.
+The **Tesla Swarm Integrity Protocol (TSIP)** is a high-reliability framework designed for autonomous operations in high-latency environments (up to 24-minute signal delay).
+
+### 🧩 Core System Modules:
+
+* **GIEP (Inertial Signal Purification):** A proprietary filtering layer that isolates core telemetry from environmental noise and gravitational anomalies. Essential for maintaining orientation during non-nominal landing/docking sequences.
+* **AAB (Dynamic Task Allocation):** An adaptive load-balancing algorithm. It enables the swarm to reconfigure unit roles (Energy/Construction/Maintenance) in real-time based on local resource scarcity and mission-critical KPIs.
+* **Rs Index (Consensus Stability):** A mathematical metric for swarm coherence. It prevents "logic-looping" in decentralized agents, ensuring all units maintain a unified operational vector without a central command.
 
 ---
 
