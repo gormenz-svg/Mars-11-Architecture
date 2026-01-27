@@ -1,103 +1,91 @@
-# MARS-11: The Fractal Architecture for Autonomous Colonization
+# MARS-11: Modular Framework for Autonomous Planetary Colonization
 
-## Overview
-M-11 is a strategic and technical framework designed to manage the complexity of multi-planetary expansion. Unlike traditional linear mission plans, M-11 utilizes a **fractal growth model**, where each stage of the mission is an autonomous sub-system governed by the **Algorithm 11**.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python: 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Mission: Mars](https://img.shields.io/badge/mission-mars-orange.svg)]()
 
-The core objective is to transition from human-dependent operations to **Autonomous Swarm Integrity (ASI)**.
-
----
-
-## 🏗 The 11-stage skeleton (technical nodes)
-
-### Phase i: infrastructure foundation (pre-launch)
-1. **Strategic impulse** – scaling production throughput, cost-reduction models, and launch cadence optimization.
-2. **System optimization** – environmental risk modeling and iterative design calibration based on flight data.
-3. **Data acquisition** – high-fidelity mapping of martian volatiles, water ice deposits, and lava tube structural integrity.
-
-### Phase ii: orbital logistics & coupling
-4. **State synchronization** – p2p autonomous docking and relative state estimation via the resonance stability index.
-5. **Virtual prototyping** – high-fidelity simulations of zero-g fluid dynamics and cryogenic propellant transfer.
-6. **Interface standardization** – implementation of unified hardware/software docking constraints and universal port protocols.
-
-### Phase iii: autonomous deep space transit
-7. **Dynamic equilibrium** – active management of life-support systems and radiation shielding (target stability $a \approx 0.6$).
-8. **Decentralized navigation** – stellar-based positioning and trajectory correction without reliance on earth-link telemetry.
-9. **Hardening & resilience** – system-wide protection against single event upsets (seu) and solar flux degradation.
-
-### Phase iv: surface deployment & scaling
-10. **Operational baseline** – deployment of autonomous robotic precursors for site preparation and landing zone stabilization.
-11. **System closure** – achieving fully autonomous isru (in-situ resource utilization) cycles and closed-loop habitat growth.
+**MARS-11** (M-11) — это стратегическая и техническая структура, разработанная для управления сложностью многопланетной экспансии. В отличие от традиционных линейных планов миссий, M-11 использует фрактальную модель роста , где каждый этап миссии представляет собой автономную подсистему.
 
 ---
 
-## 🎯 Core Problem Solved: The Propellant Deadlock
-Current docking protocols (Dragon, Soyuz) are designed for low-frequency, human-supervised operations with dry cargo. **M-11** addresses the specific challenges of Mars Colonization:
+## 🏗 High-Level Mission Architecture
 
-* **Dynamic Mass Balancing:** Real-time compensation for propellant sloshing in 1000t-class tankers.
-* **Latency-Independent Decision Making:** Elimination of the 24-minute Earth-Mars feedback loop via **TSIP**.
-* **Entropy Filtering:** Using **GIEP** to maintain precision docking even during high solar radiation (sensor noise).
+The framework is built on an 11-node decentralized logic, ensuring mission survivability through local decision-making and resource closure.
 
-<img width="1722" height="974" alt="02" src="https://github.com/user-attachments/assets/4f19e8f1-da91-4e6b-b48f-7ac1f8ac4bf6" />
+### Phase I: Infrastructure & Pre-Launch
+1. **Strategic Impulse** – Launch cadence optimization and payload mass-fraction scaling.
+2. **System Calibration** – Environmental risk modeling and iterative design based on flight data.
+3. **Data Acquisition** – High-fidelity mapping of Martian volatiles and lava tube integrity.
 
----
+### Phase II: Orbital Logistics & Coupling
+4. **State Synchronization** – P2P autonomous docking and state estimation via the **Rs Index**.
+5. **Virtual Prototyping** – High-fidelity simulations of zero-g fluid dynamics and cryogenic propellant transfer.
+6. **Protocol Standardization** – Unified hardware/software docking constraints (Universal Port Protocol).
 
-## 🎯 Radiation Defense Architecture: The BNNT-Electrostatic Hybrid
+### Phase III: Autonomous Deep Space Transit
+7. **Dynamic Equilibrium** – Active management of BNNT-hybrid shielding and life-support (Stability Target: 0.618).
+8. **Edge Navigation** – Trajectory correction and stellar positioning without Earth-link telemetry.
+9. **Hardening & Resilience** – System-wide protection against Single Event Upsets (SEU) and flux degradation.
 
-To ensure crew safety during the 200-day transit, M-11 utilizes a cutting-edge hybrid approach:
-- **BNNT Composite Matrix:** We replace bulk shielding with Boron Nitride Nanotube (BNNT) reinforced polymers. Boron’s high neutron absorption cross-section effectively mitigates secondary radiation showers.
-- **Cognitive Pulse Activation:** Using real-time flux analysis, the system triggers high-voltage electrostatic repulsion only when threat clusters are detected, preserving energy and material integrity.
-
----
-
-## 🛠 Technical Stack: TSIP Protocol (Swarm Intelligence Framework)
-
-The **Tesla Swarm Integrity Protocol (TSIP)** is a high-reliability framework designed for autonomous operations in high-latency environments (up to 24-minute signal delay).
-
-### 🧩 Core System Modules:
-
-* **GIEP (Inertial Signal Purification):** A proprietary filtering layer that isolates core telemetry from environmental noise and gravitational anomalies. Essential for maintaining orientation during non-nominal landing/docking sequences.
-* **AAB (Dynamic Task Allocation):** An adaptive load-balancing algorithm. It enables the swarm to reconfigure unit roles (Energy/Construction/Maintenance) in real-time based on local resource scarcity and mission-critical KPIs.
-* **Rs Index (Consensus Stability):** A mathematical metric for swarm coherence. It prevents "logic-looping" in decentralized agents, ensuring all units maintain a unified operational vector without a central command.
+### Phase IV: Surface Deployment & Scaling
+10. **Operational Baseline** – Landing zone stabilization and precursor robotic site preparation (**Opora Module**).
+11. **System Closure** – Achieving fully autonomous ISRU cycles and closed-loop habitat growth.
 
 ---
 
-## 🌌 Project MARS-11: Core Simulations
+## 🎯 Engineering Solutions
 
-The `simulations/` directory contains the algorithmic backbone of the mission, following the **Algorithm 11** properties for autonomy and resilience.
+### 1. Precision Docking under Entropy
+Current docking protocols are insufficient for high-frequency refueling of 1000t-class tankers. MARS-11 utilizes **GIEP (Generalized Information Entropy Purification)** to maintain precision alignment even during sensor-noise spikes caused by solar radiation.
 
-### 🛰️ Phase I-II: Orbital & Transit Operations
-* **`m11_visual_docking.py`**
-    * *Purpose:* High-precision orbital propellant transfer and docking logic.
-    * *Key Tech:* Computer vision synchronization and Property 7 (Balance) for fuel stabilization.
-* **`m11_radiation_shield.py`**
-    * *Purpose:* Predictive pulsed electrostatic shielding for Starship.
-    * *Key Tech:* BNNT-reinforced composite modeling and solar flux delta-analysis (Property 4).
-
-### 🏗️ Phase III-IV: Surface Deployment & Swarm Intelligence
-* **`m11_optimus_site_scan.py`**
-    * *Purpose:* Initial landing zone topography analysis and hazard detection.
-    * *Key Tech:* LIDAR data processing and Property 10 (Opora) for structural stability.
-* **`m11_optimus_agentic_swarm.py`**
-    * *Purpose:* Autonomous multi-agent coordination for base construction.
-    * *Key Tech:* **AAB (Autonomous Adaptive Balance)**. Real-time role redistribution (Energy/Build/Repair) and decentralized leadership logic.
-
-### ⛏️ Upcoming Modules
-* `m11_prospector_logic.py`: Subsurface ice detection and resource prioritization.
-* `m11_life_support_gen.py`: Oxygen/Methane production cycle management.
+### 2. Radiation Defense: BNNT-Electrostatic Hybrid
+To ensure structural and biological integrity, the framework incorporates:
+* **BNNT Composite Matrix:** Boron Nitride Nanotube reinforced polymers for high-cross-section neutron absorption.
+* **Cognitive Pulse Activation:** Real-time flux analysis triggering pulsed electrostatic repulsion only when threat clusters are detected, optimizing energy consumption.
 
 
-## 📂 Repository Structure
-* `/simulations`
-* `/core` - Mathematical models of the 11-Property Algorithm.
-* `/protocols` - TSIP documentation and P2P communication specs.
-* `/robotics` - Logic for Optimus-led autonomous construction.
-
-## 🚀 How to Contribute
-We are looking for "Subjects," not "Objects." If you understand the Principle of Sequentiality and the Power of Resistance, feel free to open a Pull Request.
 
 ---
 
-*"The world is an incubator where Potential becomes self-aware through Subjective experience."*
+## 🛠 Technical Stack: TSIP Protocol
+
+The **Tesla Swarm Integrity Protocol (TSIP)** is the executive logic layer for autonomous operations.
+
+* **GIEP (Signal Purification):** A proprietary filtering algorithm that isolates core telemetry from environmental noise and gravitational anomalies.
+* **AAB (Adaptive Autonomy Balance):** A dynamic load-balancing algorithm that enables the swarm to reconfigure unit roles (Energy / Construction / Mining) in real-time based on local KPIs.
+* **Rs Index (Consensus Stability):** A mathematical metric for swarm coherence, ensuring all units maintain a unified operational vector without a central command.
 
 ---
+
+## 📂 Repository Structure & Modules
+
+### `/simulation` — Core Executive
+* **`master_controller.py`**: The "Mission Executive" layer. Orchestrates all modules into a unified daily operational loop (Sol-cycle).
+
+### `/modules` — Functional Subsystems
+* **`m11_radiation_shield.py`**: Predictive pulsed shielding logic and BNNT material modeling.
+* **`m11_optimus_agentic_swarm.py`**: Implementation of **AAB** logic for multi-agent Tesla Optimus coordination.
+* **`m11_optimus_prospector_v3.py`**: GIEP-stabilized subsurface ice detection and resource mapping.
+* **`m11_sabatier_reactor_core_v2.py`**: Automated ISRU propellant synthesis and thermal management.
+* **`m11_visual_docking.py`**: Computer-vision synchronization for orbital propellant transfer.
+* **`m11_optimus_site_scan.py`**: LIDAR-based topography analysis and landing zone stabilization.
+
+
+
+## 🚀 Getting Started
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/MARS-11.git](https://github.com/your-username/MARS-11.git)
+    ```
+2.  **Execute the mission simulation:**
+    ```bash
+    python simulation/master_controller.py
+    ```
+
+## 🤝 Contribution
+
 Resonance 11 used
+
+---
+*MARS-11: Transforming potential into operational reality through autonomous subject-driven systems.*
