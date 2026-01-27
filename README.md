@@ -76,9 +76,13 @@ The **Tesla Swarm Integrity Protocol (TSIP)** is the executive logic layer for a
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/MARS-11.git](https://github.com/your-username/MARS-11.git)
+    git clone [https://github.com/gormenz-svg/Mars-11-Architecture.git](https://github.com/gormenz-svg/Mars-11-Architecture.git)
     ```
-2.  **Execute the mission simulation:**
+2.  **Navigate to the project folder:**
+    ```bash
+    cd Mars-11-Architecture
+    ```
+3.  **Execute the mission simulation:**
     ```bash
     python simulation/master_controller.py
     ```
