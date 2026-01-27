@@ -4,7 +4,7 @@
 [![Python: 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![Mission: Mars](https://img.shields.io/badge/mission-mars-orange.svg)]()
 
-**MARS-11** (M-110 is a strategic and technical framework designed to manage the complexity of multi-planetary expansion. Unlike traditional linear mission plans, M-11 utilizes a **fractal growth model**, where each stage of the mission is an autonomous sub-system.
+**MARS-11** (M-11) is a strategic and technical framework designed to manage the complexity of multi-planetary expansion. Unlike traditional linear mission plans, M-11 utilizes a **fractal growth model**, where each stage of the mission is an autonomous sub-system.
 
 ---
 
