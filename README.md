@@ -72,13 +72,14 @@ It is a smart management system for biological ecosystems (like greenhouses or o
 
 ---
 
-## 🛠 Technical Stack: TSIP Protocol
+## 🛠 Core Methodology: M11-Systems Integration
 
-The **Tesla Swarm Integrity Protocol (TSIP)** is the executive logic layer for autonomous operations.
+The **MARS-11 Architecture** is powered by a multi-layered executive logic that ensures stability across physical, digital, and biological domains.
 
-* **GIEP (Signal Purification):** A proprietary filtering algorithm that isolates core telemetry from environmental noise and gravitational anomalies.
-* **AAB (Adaptive Autonomy Balance):** A dynamic load-balancing algorithm that enables the swarm to reconfigure unit roles (Energy / Construction / Mining) in real-time based on local KPIs.
-* **Rs Index (Consensus Stability):** A mathematical metric for swarm coherence, ensuring all units maintain a unified operational vector without a central command.
+* **GIEP & Gnosis (Signal Purification):** A proprietary dual-stage filtering algorithm. It isolates core telemetry from environmental noise and prevents AI cognitive entropy (hallucinations) by validating information stability.
+* **AAB (Adaptive Autonomy Balance):** A dynamic load-balancing logic that enables the system to reconfigure resources — whether robotic units, reactor cycles, or bio-stress levels — in real-time based on local KPIs.
+* **LAM Interaction (Visual Agency):** A Large Action Model layer that allows the system to interact with legacy and modern interfaces through visual perception, ensuring operational continuity without direct API dependencies.
+* **Hormesis & Rs Index (System Stability):** Mathematical metrics for coherence. While the Rs Index ensures swarm alignment, the Hormesis protocol maintains biological resilience, ensuring the entire base functions as a unified, "living" subject.
 
 ---
 
