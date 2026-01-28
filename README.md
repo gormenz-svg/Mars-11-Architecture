@@ -43,7 +43,7 @@ To ensure structural and biological integrity, the framework incorporates:
 * **BNNT Composite Matrix:** Boron Nitride Nanotube reinforced polymers for high-cross-section neutron absorption.
 * **Cognitive Pulse Activation:** Real-time flux analysis triggering pulsed electrostatic repulsion only when threat clusters are detected, optimizing energy consumption.
 
-### 3. Simple Overview
+### 3. Visual Action Interface (LAM Concept)
 **What is it?**
 It is a technology that gives AI "eyes" to see any computer screen or machine dashboard just like a human does. Instead of needing special hidden code (API), the AI looks at buttons, icons, and menus to understand how to operate them.
 
