@@ -43,7 +43,14 @@ To ensure structural and biological integrity, the framework incorporates:
 * **BNNT Composite Matrix:** Boron Nitride Nanotube reinforced polymers for high-cross-section neutron absorption.
 * **Cognitive Pulse Activation:** Real-time flux analysis triggering pulsed electrostatic repulsion only when threat clusters are detected, optimizing energy consumption.
 
+### 3. Simple Overview
+**What is it?**
+It is a technology that gives AI "eyes" to see any computer screen or machine dashboard just like a human does. Instead of needing special hidden code (API), the AI looks at buttons, icons, and menus to understand how to operate them.
 
+**What does it solve?**
+* **Universal Compatibility:** The robot can control any equipment (new or old) from any manufacturer just by looking at the control panel.
+* **Autonomous Self-Healing:** If an error pops up on the screen, the AI "sees" the warning, opens the settings, fixes the issue, and clicks "Restart" without waiting for instructions from Earth.
+* **Human-Like Learning:** You can "show" the robot what to do on a tablet, and it will mimic the visual sequence on other devices.
 
 ---
 
@@ -69,6 +76,7 @@ The **Tesla Swarm Integrity Protocol (TSIP)** is the executive logic layer for a
 * **`m11_sabatier_reactor_core_v2.py`**: Automated ISRU propellant synthesis and thermal management.
 * **`m11_visual_docking.py`**: Computer-vision synchronization for orbital propellant transfer.
 * **`m11_optimus_site_scan.py`**: LIDAR-based topography analysis and landing zone stabilization.
+* **`m11_visual_action_lam.py`**: [NEW] Large Action Model (LAM) simulation for autonomous UI-based interaction and self-healing via visual perception.
 
 
 
