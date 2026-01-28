@@ -52,6 +52,24 @@ It is a technology that gives AI "eyes" to see any computer screen or machine da
 * **Autonomous Self-Healing:** If an error pops up on the screen, the AI "sees" the warning, opens the settings, fixes the issue, and clicks "Restart" without waiting for instructions from Earth.
 * **Human-Like Learning:** You can "show" the robot what to do on a tablet, and it will mimic the visual sequence on other devices.
 
+### 🧠 4. Gnosis Purifier (Cognitive Filter)
+**What is it?**
+It is a "wisdom filter" for AI. Just as a human distinguishes between important news and empty gossip, this technology analyzes incoming data to separate critical signals from "informational noise" and AI hallucinations.
+
+**What does it solve?**
+* **Hallucination Mitigation:** Prevents the AI from making decisions based on false or distorted data by calculating a "stability index" for every command.
+* **Communication Efficiency:** In deep space, bandwidth is limited. The purifier ensures only high-value, purified meaning is transmitted and processed.
+* **Decision Clarity:** It acts as a digital conscience, ensuring the base's "brain" remains focused on mission-critical reality rather than digital clutter.
+
+### 🌿 5. Bio-Regen Logic (Adaptive Life Support)
+**What is it?**
+It is a smart management system for biological ecosystems (like greenhouses or oxygen reactors). Instead of just keeping plants alive, it treats the entire greenhouse as a living, responding subject that grows stronger through "calculated challenges."
+
+**What does it solve?**
+* **Maximum Yield:** By applying precise amounts of "adaptive stress," the system forces plants and algae to produce more oxygen and nutrients than they would in a static environment.
+* **Autonomous Homeostasis:** The system automatically balances the gas exchange between humans and plants, adjusting the "breath" of the base in real-time.
+* **Stagnation Prevention:** It prevents biological decay by ensuring the ecosystem is always in a state of active evolution and resilience.
+
 ---
 
 ## 🛠 Technical Stack: TSIP Protocol
@@ -70,13 +88,21 @@ The **Tesla Swarm Integrity Protocol (TSIP)** is the executive logic layer for a
 * **`master_controller.py`**: The "Mission Executive" layer. Orchestrates all modules into a unified daily operational loop (Sol-cycle).
 
 ### `/modules` — Functional Subsystems
-* **`m11_radiation_shield.py`**: Predictive pulsed shielding logic and BNNT material modeling.
-* **`m11_optimus_agentic_swarm.py`**: Implementation of **AAB** logic for multi-agent Tesla Optimus coordination.
+
+#### 🤖 Physical & Tactical Layer
+* **`m11_radiation_shield.py`**: Predictive pulsed shielding logic and BNNT (Boron Nitride Nanotube) material modeling.
+* **`m11_optimus_agentic_swarm.py`**: Implementation of **AAB** (Adaptive Autonomy Balance) logic for multi-agent Tesla Optimus coordination.
 * **`m11_optimus_prospector_v3.py`**: GIEP-stabilized subsurface ice detection and resource mapping.
 * **`m11_sabatier_reactor_core_v2.py`**: Automated ISRU propellant synthesis and thermal management.
-* **`m11_visual_docking.py`**: Computer-vision synchronization for orbital propellant transfer.
 * **`m11_optimus_site_scan.py`**: LIDAR-based topography analysis and landing zone stabilization.
-* **`m11_visual_action_lam.py`**: [NEW] Large Action Model (LAM) simulation for autonomous UI-based interaction and self-healing via visual perception.
+
+#### 👁️ Perception & Interaction Layer
+* **`m11_visual_docking.py`**: Computer-vision synchronization for orbital propellant transfer and precision alignment.
+* **`m11_visual_action_lam.py`**: **Large Action Model (LAM)** simulation for autonomous UI-based interaction and self-healing via visual perception.
+
+#### 🧠 Cognitive & Biological Layer
+* **`m11_gnosis_purifier.py`**: **Cognitive filtration** module using signal-to-noise stability analysis to mitigate AI hallucinations and communication entropy.
+* **`m11_bio_regen_logic.py`**: **Closed-loop life support (CLLS)** management using adaptive stress response (hormesis) to optimize biomass and oxygen (O2) yield.
 
 
 
