@@ -2,7 +2,7 @@
 MARS-11: Master Mission Controller (Executive Layer)
 --------------------------------------------------
 Orchestration script for the autonomous Martian base operations.
-Links Swarm Robotics, GIEP Sensing, Radiation Protection, and ISRU.
+Links Swarm Robotics, GIEP Sensing, Radiation Protection, ISRU, and Visual LAM.
 """
 
 import sys
@@ -18,8 +18,8 @@ try:
     from modules.m11_optimus_agentic_swarm import OptimusSwarm
     from modules.m11_optimus_prospector_v3 import M11GIEPProspector
     from modules.m11_sabatier_reactor_core_v2 import M11SabatierController
-    from modules.m11_visual_docking import VisualDocking  # Added for completeness
-    # m11_optimus_site_scan can be used inside the swarm or as a separate tool
+    from modules.m11_visual_docking import VisualDocking
+    from modules.m11_visual_action_lam import VisualLAMAgent  # New LAM Module
 except ImportError as e:
     print(f"[ERROR] Failed to import modules: {e}")
     sys.exit(1)
@@ -27,7 +27,7 @@ except ImportError as e:
 class MarsBaseManager:
     def __init__(self):
         print("\n" + "="*45)
-        print("  MARS-11 COMMAND & CONTROL INTERFACE v1.0")
+        print("   MARS-11 COMMAND & CONTROL INTERFACE v1.1")
         print("="*45)
         
         # Initializing components
@@ -36,6 +36,7 @@ class MarsBaseManager:
         self.prospector = M11GIEPProspector()
         self.reactor = M11SabatierController()
         self.docking = VisualDocking()
+        self.visual_navigator = VisualLAMAgent() # The "Eyes" of the base
         
         self.sol = 0
 
@@ -45,32 +46,33 @@ class MarsBaseManager:
         print(f"\n[SOL {self.sol}] Starting daily routines...")
 
         # 1. SAFETY FIRST (Property 6: Constraint)
-        # Check radiation levels before any robot leaves the hangar
         if not self.shield.monitor_radiation():
             print("[ALERT] High Solar Activity! All units remain in shielded hangar.")
             return
 
         # 2. SITE SCAN & NAVIGATION
-        # Visual docking check to ensure base integrity
         if not self.docking.check_alignment():
-            print("[MAINTENANCE] Docking misalignment detected. Swarm calibrating...")
+            print("[MAINTENANCE] Docking misalignment. Swarm calibrating...")
             self.swarm.reallocate_units(role="MAINTENANCE", count=2)
 
         # 3. RESOURCE DISCOVERY (Property 3: Knowledge)
-        # Using GIEP logic to filter noise and find H2O
         print("[SCAN] Running GIEP-stabilized sub-surface scan...")
-        # Simulated raw signal from sensors
         purified_signal = self.prospector.purification_logic([0.82, 0.90, 0.75])
         
         # 4. DYNAMIC PRODUCTION (Property 11: Realization)
         if purified_signal > 0.8:
-            print(f"[SUCCESS] High-confidence H2O detected (Confidence: {purified_signal:.2f})")
+            print(f"[SUCCESS] High-confidence H2O detected ({purified_signal:.2f})")
             print("[ISRU] Activating Sabatier Reactor...")
             self.reactor.simulate_day(cycles=1)
             self.swarm.reallocate_units(role="MINING", count=4)
         else:
             print("[SCAN] No significant resources found. Continuing survey.")
             self.swarm.reallocate_units(role="EXPLORATION", count=11)
+
+        # 5. VISUAL SELF-HEAL (LAM Layer)
+        # Final visual sweep of the dashboard to catch any UI errors
+        print("[LAM] Performing final visual sweep of base interfaces...")
+        self.visual_navigator.self_heal_protocol()
 
         print(f"[SOL {self.sol}] Protocol completed. Data synced to Earth.")
 
